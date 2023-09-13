@@ -5,6 +5,10 @@ from langchain.vectorstores import Chroma
 from langchain.document_loaders import TextLoader
 import time
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 st.title("Dr. Victor Baugaredde (Stroke Specialist)")
 
 # Initialize Langchain components
